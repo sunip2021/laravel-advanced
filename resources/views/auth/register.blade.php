@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  
+
     <div class="card w-50 mx-auto mt-3">
         <div class="card-header">
             New Registration
@@ -39,24 +39,32 @@
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation">
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Date of Birth</label>
-                        <input type="date" class="form-control" id="exampleInputPassword1" name="dob">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" id="exampleInputPassword1" name="dob">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Gender</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male">
+                        <label class="form-check-label" for="inlineRadio1">Male</label>
                     </div>
-                    <div class="mb-3">
-                           <label for="exampleInputEmail1" class="form-label">Gender</label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male">
-                            <label class="form-check-label" for="inlineRadio1">Male</label>
-                        </div>
-                        <div class="form-check form-check-inline">
+                    <div class="form-check form-check-inline">
 
-                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female">
-                            <label class="form-check-label" for="inlineRadio2">Female</label>
-                        </div>
+                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female">
+                        <label class="form-check-label" for="inlineRadio2">Female</label>
                     </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="mb-3">
+                    <select name="country" id="" class="form-select">
+                        <option value="" selected disabled>Select Country</option>
+                      @foreach($countries as $country)
+                      <option value="">{{$country->name}}</option>
+                      @endforeach
+                    </select>
+                </div>    
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>

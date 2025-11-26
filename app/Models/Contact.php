@@ -10,13 +10,14 @@ class Contact extends Model
 {
     protected $guarded = [];
     use HasFactory;
-    protected function firstName(): Attribute
-    {
-        return Attribute::make(
+    // protected function firstName(): Attribute
+    // {
+    //     return Attribute::make(
            
-            set: fn(string $value) => strtolower($value),
-        );
-    }
+    //         set: fn(string $value) => strtolower($value),
+    //     );
+    // }
+    
     public function user()
     {
         return $this->belongsTo(User::class);
