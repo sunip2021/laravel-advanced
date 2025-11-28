@@ -57,12 +57,15 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <select name="country" id="" class="form-select">
+                <label for="exampleInputEmail1" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="address">
+
+                    <!-- <select name="country" id="" class="form-select">
                         <option value="" selected disabled>Select Country</option>
                       @foreach($countries as $country)
                       <option value="">{{$country->name}}</option>
                       @endforeach
-                    </select>
+                    </select> -->
                 </div>    
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

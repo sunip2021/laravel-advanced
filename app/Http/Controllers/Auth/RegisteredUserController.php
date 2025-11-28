@@ -46,7 +46,9 @@ class RegisteredUserController extends Controller
             'dob'=>$request->dob,
             'gender'=>$request->gender
         ]);
-
+        $user->contact()->create([
+            'address'=>$request->address
+        ]);
         event(new Registered($user));
 
         Auth::login($user);
