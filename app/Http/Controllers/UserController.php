@@ -12,7 +12,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users=User::get();
+        $users=User::with('contact')->get();
+        dd($users[3]->contact->address);
         $result=compact('users');
      
         return view('userlist')->with( $result);
