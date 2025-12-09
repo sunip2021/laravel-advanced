@@ -3,6 +3,7 @@
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Models\Comment;
 use App\Models\Post;
@@ -24,6 +25,8 @@ Route::middleware('auth')->group(function () {
 });
 Route::resource('user',UserController::class);
 Route::resource('employee',EmployeeController::class);
+Route::resource('tasks',TaskController::class);
+Route::post('/fetch-task',[TaskController::class,'fetchTasks'])->name('fetchtasks');
 // Route::get('/',function(){
 //     Post::whereId(1)-> first()->delete();
 //     // Comment::wherePostId(1)->delete();
