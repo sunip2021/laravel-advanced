@@ -3,6 +3,7 @@
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StripeController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Models\Comment;
@@ -32,4 +33,7 @@ Route::post('/fetch-task',[TaskController::class,'fetchTasks'])->name('fetchtask
 //     // Comment::wherePostId(1)->delete();
 // });
 require __DIR__.'/auth.php';
+Route::get('stripe',[StripeController::class,'index']);
+Route::post('stripe',[StripeController::class,'store'])->name('stripe.payment');
+
 
