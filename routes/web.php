@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmailController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,5 +36,6 @@ Route::post('/fetch-task',[TaskController::class,'fetchTasks'])->name('fetchtask
 require __DIR__.'/auth.php';
 Route::get('stripe',[StripeController::class,'index']);
 Route::post('stripe',[StripeController::class,'store'])->name('stripe.payment');
+Route::get('/send-email',[EmailController::class,'sendEmail']);
 
 
